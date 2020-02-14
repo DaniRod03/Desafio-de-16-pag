@@ -5,11 +5,13 @@ public class Professor {
     private String nomeProf;
     private String sobrenomeProf;
     private Integer matriculaProf;
+    private Integer tempoDeCasa;
 
     public Professor(String nomeProf, String sobrenomeProf, Integer matriculaProf) {
         this.nomeProf = nomeProf;
         this.sobrenomeProf = sobrenomeProf;
         this.matriculaProf = matriculaProf;
+        this.tempoDeCasa = 0;
     }
 
     @Override

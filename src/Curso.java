@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -6,16 +8,44 @@ public class Curso {
 
     private ProfessorAdjunto professorAdjunto;
     private ProfessorTitular professorTitular;
-    private Integer qtdMaxima;
     private List<Alunos> listaAlunos = new ArrayList<>();
     private String nomeCurso;
     private Integer codCurso;
+    private Integer qtdMaxima;
+
+    public Curso(String nomeCurso, Integer codCurso, Integer qtdMaxima) {
+        this.nomeCurso = nomeCurso;
+        this.codCurso = codCurso;
+        this.qtdMaxima = qtdMaxima;
+    }
 
 
 
-    public Curso(String nomeCurso, Integer codCurso) {
-        this.setNomeCurso(nomeCurso);
-        this.setCodCurso(codCurso);
+
+
+    public boolean adicionarUmAluno(Alunos umAluno){
+            if (listaAlunos.size() == qtdMaxima){
+                System.out.println("Turma lotada");
+                return false;
+            }
+            else{
+                System.out.println("Aluno matriculado");
+                return true;
+        }
+    }
+    public void excluirAluno(Alunos umAluno){
+        if(listaAlunos.size() > 0){
+        listaAlunos.remove(umAluno);
+        System.out.println("Aluno Excluido com sucesso");
+        }
+        else{
+            System.out.println("Turma vazia");
+        }
+    }
+
+    public void addCurso(String nomeCurso, Integer codCurso, Integer qtdMaxima){
+        System.out.println("Curso adicionado");
+
     }
 
     public String getNomeCurso() {

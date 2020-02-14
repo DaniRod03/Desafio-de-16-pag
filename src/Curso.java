@@ -1,9 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Curso {
 
+    private ProfessorAdjunto professorAdjunto;
+    private ProfessorTitular professorTitular;
+    private Integer qtdMaxima;
+    private List<Alunos> listaAlunos = new ArrayList<>();
     private String nomeCurso;
     private Integer codCurso;
+
 
 
     public Curso(String nomeCurso, Integer codCurso) {
